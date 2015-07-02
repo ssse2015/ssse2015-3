@@ -23,38 +23,68 @@ $( document ).on( "pageinit", "#map-page", function() {
         // Add an overlay to the map of current lat/lng
         var marker = new google.maps.Marker({
             position: latlng,
-            map: map,
+			map: map,
             title: "Greetings!"
         });
 		var marker1 = new google.maps.Marker({
             position: new google.maps.LatLng(40.7252357,-74.0038984),
-            map: map,
+            url: 'https://foursquare.com/aquagrillnyc',
+			map: map,
             title: "Aquagrill"
         });
 		var marker2 = new google.maps.Marker({
             position: new google.maps.LatLng(40.6753539,-74.0165422),
-            map: map,
+            url: 'https://foursquare.com/v/brooklyn-crab/4f107e84e5e852ca73ddd2fa',
+			map: map,
             title: "Brooklyn Crab"
         });
 		var marker3 = new google.maps.Marker({
             position:new google.maps.LatLng (40.742631,-74.0060685),
-            map: map,
+            url: 'https://foursquare.com/v/lobster-place/49c42857f964a5209f561fe3',
+			map: map,
             title: "The Lobster Place"
         });
 		var marker4 = new google.maps.Marker({
             position:new google.maps.LatLng(40.7524862,-73.9774231),
-            map: map,
+            url: 'https://foursquare.com/v/grand-central-oyster-bar/3fd66200f964a52074e71ee3',
+			map: map,
             title: "Grand Central Oyster Bar"
         });
 		var marker5 = new google.maps.Marker({
             position: new google.maps.LatLng(40.759569,-73.981901),
-            map: map,
+            url: 'https://foursquare.com/oceananyc',
+			map: map,
             title: "Oceana"
         });
 		var marker6 = new google.maps.Marker({
             position: new google.maps.LatLng(40.714269,-73.961715),
-            map: map,
+            url: 'https://foursquare.com/v/maison-premiere/4d34a091c6cba35dec2f357a',
+			map: map,
             title: "Maison Premiere"
         });
-    }
+		//var infowindow = new google.maps.InfoWindow({
+			//content: Aquagrill
+		
+		google.maps.event.addListener(marker1, 'click', function() {
+		window.location.href = this.url;}); 
+		
+		google.maps.event.addListener(marker2, 'click', function() {
+		window.location.href = this.url;});
+		
+		google.maps.event.addListener(marker3, 'click', function() {
+		window.location.href = this.url;});
+		
+		google.maps.event.addListener(marker4, 'click', function() {
+		window.location.href = this.url;}); 
+		
+		google.maps.event.addListener(marker5, 'click', function() {
+		window.location.href = this.url;});
+		
+		google.maps.event.addListener(marker6, 'click', function() {
+		window.location.href = this.url;});
+		
+	} 
+	//google.maps.event.addListener(marker1, 'click', function(first) {
+    //infowindow.open(map,marker)};
+	
 });
