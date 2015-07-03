@@ -1,3 +1,4 @@
+var map;
 $( document ).on( "pageinit", "#map-page", function() {
     var defaultLatLng = new google.maps.LatLng(40.7243973,-73.9976353);  // Default to New York when no geolocation support
     if ( navigator.geolocation ) {
@@ -19,12 +20,12 @@ $( document ).on( "pageinit", "#map-page", function() {
             center: latlng,
             mapTypeId: google.maps.MapTypeId.ROADMAP
         };
-        var map = new google.maps.Map(document.getElementById("map-canvas"), myOptions);
+        map = new google.maps.Map(document.getElementById("map-canvas"), myOptions);
         // Add an overlay to the map of current lat/lng
         var marker = new google.maps.Marker({
             position: latlng,
 			map: map,
-            title: "Greetings!"
+            title: "You Are Here!"
         });
 		var marker1 = new google.maps.Marker({
             position: new google.maps.LatLng(40.7252357,-74.0038984),
@@ -62,8 +63,7 @@ $( document ).on( "pageinit", "#map-page", function() {
 			map: map,
             title: "Maison Premiere"
         });
-		//var infowindow = new google.maps.InfoWindow({
-			//content: Aquagrill
+		
 		
 		google.maps.event.addListener(marker1, 'click', function() {
 		window.location.href = this.url;}); 
@@ -84,7 +84,5 @@ $( document ).on( "pageinit", "#map-page", function() {
 		window.location.href = this.url;});
 		
 	} 
-	//google.maps.event.addListener(marker1, 'click', function(first) {
-    //infowindow.open(map,marker)};
 	
 });
